@@ -6,7 +6,6 @@ const { sendVerificationEmail } = require("../utils/mailer");
 const JWT_SECRET = process.env.JWT_SECRET || "change_me_in_prod";
 const JWT_EXPIRES = process.env.JWT_EXPIRES || "7d";
 
-// 🔐 ADMIN EMAIL (Option 2)
 const ADMIN_EMAIL = "admin@karima.kz";
 
 function makeCode() {
@@ -35,7 +34,6 @@ async function register(req, res, next) {
     const code = makeCode();
     const expires = expiryMinutes(10);
 
-    // ✅ OPTION 2: role based on email
     const role = email.toLowerCase() === ADMIN_EMAIL ? "admin" : "user";
 
     let u;
@@ -202,3 +200,4 @@ async function login(req, res, next) {
 }
 
 module.exports = { register, login, verifyEmail, resendCode };
+
