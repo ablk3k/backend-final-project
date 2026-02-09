@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | KaRima Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navbar -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-main shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-uppercase" href="index.html">KaRima</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+          </ul>
+
+          <button class="btn btn-outline-light ms-3" id="reserveBtn">Reserve</button>
+          <button class="btn btn-outline-light ms-2" id="themeToggle">🌙</button>
+
+          <!-- Auth UI (Login/Register or User Icon) -->
+          <div class="d-flex align-items-center ms-3" id="authArea">
+            <a class="btn btn-outline-light btn-sm me-2" href="login.html" id="loginLink">Login</a>
+            <a class="btn btn-light btn-sm" href="register.html" id="registerLink">Register</a>
+
+            <div class="dropdown d-none" id="userDropdownWrap">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                <span class="user-avatar me-2" id="userAvatar">AA</span>
+                <span id="userNameNav">User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><span class="dropdown-item-text small text-muted" id="userEmailNav">email@example.com</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><button class="dropdown-item" id="logoutBtn" type="button">Logout</button></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Auth UI -->
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Gallery Section -->
+  <main class="flex-grow-1">
+    <section class="container py-5 mt-5">
+      <h1 class="text-center mb-4" id="galleryTitle">Our Gallery</h1>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <img src="Manty.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Manty"
+               data-description="Steamed dumpling filled with juicy minced meat and onions, soft on the outside and incredibly flavorful inside - a warm, hearty classic we’re proud to serve."
+               alt="Dish 1">
+        </div>
+        <div class="col-md-4">
+          <img src="Tash_plov.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Tashkent plov"
+               data-description="A fragrant, slightly moist and deeply savory rice dish cooked with tender meat, carrots, and spices in the classic Uzbek style."
+               alt="Dish 2">
+        </div>
+        <div class="col-md-4">
+          <img src="chicken_doner.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Chicken donner"
+               data-description="Tender marinated chicken, grilled to a golden finish and served with fresh vegetables and sauce in a soft flatbread."
+               alt="Dish 3">
+        </div>
+        <div class="col-md-4">
+          <img src="khan_plov.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Khan's plov"
+               data-description="A rich, festive version with extra meat, sweetness from dried fruits, and a more luxurious, layered flavor fit for a feast."
+               alt="Dish 4">
+        </div>
+        <div class="col-md-4">
+          <img src="beef_doner.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Beef donner"
+               data-description="Thinly sliced, well-seasoned beef roasted to juicy perfection and wrapped with fresh vegetables and sauce in a warm flatbread."
+               alt="Dish 5">
+        </div>
+        <div class="col-md-4">
+          <img src="achuchuk.PNG"
+               class="img-fluid rounded shadow gallery-item object-fit-cover"
+               data-title="Achuchuk"
+               data-description="A fresh, zesty side salad of thin-sliced tomatoes, onions, and herbs that adds brightness and balance to the richness of plov."
+               alt="Dish 6"
+               style="height: 100%; object-fit: cover;">
+        </div>
+        <div class="col-md-4">
+          <img src="carbonara.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Carbonara"
+               data-description="In a sour-cream sauce is a creamy, velvety pasta with tender bits of meat and a rich, comforting flavor."
+               alt="Dish 7">
+        </div>
+        <div class="col-md-4">
+          <img src="beef_stew.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Beef stew with flatbread"
+               data-description="Stewed beef with flatbread is slow-cooked, melt-in-your-mouth beef served with warm, soft bread perfect for soaking up the rich sauce."
+               alt="Dish 8">
+        </div>
+        <div class="col-md-4">
+          <img src="fetuccini.PNG"
+               class="img-fluid rounded shadow gallery-item"
+               data-title="Fetuccine with chicken"
+               data-description="Fettuccine with chicken is a smooth, hearty pasta tossed with tender chicken pieces in a creamy, flavorful sauce."
+               alt="Dish 9">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-4 bg-main mt-auto">
+    <div>&copy; <span id="year"></span> Alpamys Abylaikhan | All rights reserved.</div>
+    <small>Dostyq street 12/1, Astana | +7 (700) 883-00-00 | +7 (700) 884-00-00</small>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="reserveModal" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+      <form id="reserveForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Reserve a Table</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="name" class="form-control mb-3" placeholder="Full name" required>
+          <input type="tel" id="phone" class="form-control mb-3" placeholder="Phone" required>
+          <div class="row">
+            <div class="col-6"><input type="date" id="resDate" class="form-control mb-3" required></div>
+            <div class="col-6"><input type="time" id="resTime" class="form-control mb-3" required></div>
+          </div>
+          <input type="number" id="guests" class="form-control" min="1" max="20" value="2" required>
+          <hr class="my-3">
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <div class="fw-semibold">Choose a table</div>
+              <small class="text-muted">Available tables will appear after you select date/time and guests.</small>
+            </div>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="refreshTablesBtn">
+              Refresh
+            </button>
+          </div>
+
+          <div id="tablesLoading" class="text-muted small d-none">Loading tables...</div>
+          <div id="tablesEmpty" class="text-muted small d-none">No tables available for this time.</div>
+
+          <div class="row g-2" id="tablesGrid"></div>
+
+          <input type="hidden" id="tableId" />
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Reserve</button>
+        </div>
+      </form>
+    </div></div>
+  </div>
+
+  <!-- Image Description Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="imageModalImg" src="" class="img-fluid rounded mb-3" alt="">
+          <p id="imageModalDesc" class="mb-0"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

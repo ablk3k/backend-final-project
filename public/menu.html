@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | KaRima Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-main shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-uppercase" href="index.html">KaRima</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+          </ul>
+
+          <button class="btn btn-outline-light ms-3" id="reserveBtn">Reserve</button>
+          <button class="btn btn-outline-light ms-2" id="themeToggle">🌙</button>
+
+          <!-- Auth UI -->
+          <div class="d-flex align-items-center ms-3" id="authArea">
+            <a class="btn btn-outline-light btn-sm me-2" href="login.html" id="loginLink">Login</a>
+            <a class="btn btn-light btn-sm" href="register.html" id="registerLink">Register</a>
+
+            <div class="dropdown d-none" id="userDropdownWrap">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                <span class="user-avatar me-2" id="userAvatar">AA</span>
+                <span id="userNameNav">User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <span class="dropdown-item-text small text-muted" id="userEmailNav">
+                    email@example.com
+                  </span>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <button class="dropdown-item" id="logoutBtn" type="button">Logout</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Auth UI -->
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="menu-hero d-flex align-items-center text-white">
+    <div class="container">
+      <div class="col-md-7 hero-text">
+        <h1 class="display-3 fw-bold mb-3">Our Menu</h1>
+        <p class="lead mb-4">Discover the authentic taste of Kazakhstan — where tradition meets modern flavor.</p>
+        <a href="#dishes" class="btn btn-primary btn-lg">Explore Dishes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="dishes" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">Featured Dishes</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="dish-card" style="background-image: url('https://foodperestroika.com/wp-content/uploads/2015/11/Beshbarmak1-featured.jpg');">
+            <div class="dish-overlay">
+              <h3>Beshbarmak</h3>
+              <p>Traditional Kazakh dish with tender meat and noodles.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="dish-card" style="background-image: url('https://www.tasteatlas.com/images/dishes/462bcd6ef07e4ce482c2695945d72241.jpg');">
+            <div class="dish-overlay">
+              <h3>Qazy</h3>
+              <p>Homemade horse meat sausage seasoned with aromatic spices.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="dish-card" style="background-image: url('https://vidarbergum.com/wp-content/uploads/2024/10/uzbek-plov-2.jpg');">
+            <div class="dish-overlay">
+              <h3>Plov</h3>
+              <p>Rice pilaf with lamb, carrots, and oriental spices.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Manage Menu (Admin only) -->
+  <section id="manageMenu" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Manage Menu (API)</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="apiMenuForm" class="mb-4">
+            <div class="mb-2"><input type="text" id="mname" class="form-control" placeholder="Name" required></div>
+            <div class="mb-2"><input type="number" step="0.01" id="mprice" class="form-control" placeholder="Price" required></div>
+            <div class="mb-2"><input type="text" id="mcategory" class="form-control" placeholder="Category" required></div>
+            <div class="mb-2"><textarea id="mdesc" class="form-control" placeholder="Description" required></textarea></div>
+            <button class="btn btn-primary" type="submit">Create Menu Item</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Menu Items</h5>
+          <div id="apiMenuList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-4 bg-main mt-auto">
+    <div>&copy; <span id="year"></span> Alpamys Abylaikhan | All rights reserved.</div>
+    <small>Dostyq street 12/1, Astana | +7 (700) 883-00-00 | +7 (700) 884-00-00</small>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="reserveModal" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+      <form id="reserveForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Reserve a Table</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="name" class="form-control mb-3" placeholder="Full name" required>
+          <input type="tel" id="phone" class="form-control mb-3" placeholder="Phone" required>
+          <div class="row">
+            <div class="col-6"><input type="date" id="resDate" class="form-control mb-3" required></div>
+            <div class="col-6"><input type="time" id="resTime" class="form-control mb-3" required></div>
+          </div>
+          <input type="number" id="guests" class="form-control" min="1" max="20" value="2" required>
+          <hr class="my-3">
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <div class="fw-semibold">Choose a table</div>
+              <small class="text-muted">Available tables will appear after you select date/time and guests.</small>
+            </div>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="refreshTablesBtn">
+              Refresh
+            </button>
+          </div>
+
+          <div id="tablesLoading" class="text-muted small d-none">Loading tables...</div>
+          <div id="tablesEmpty" class="text-muted small d-none">No tables available for this time.</div>
+
+          <div class="row g-2" id="tablesGrid"></div>
+
+          <input type="hidden" id="tableId" />
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Reserve</button>
+        </div>
+      </form>
+    </div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

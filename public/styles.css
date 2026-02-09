@@ -1,0 +1,358 @@
+/* ======================= BASE STYLES ======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f3ef;
+  color: #2e2e2e;
+}
+
+h1, h2, h3 {
+  color: #4a3a28;
+}
+
+img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* ======================= NAVBAR ======================= */
+.navbar, .bg-main {
+  background-color: #8b6f47 !important;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #fff;
+}
+
+.navbar .nav-link,
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #f7e8d0 !important;
+}
+
+/* ======================= USER ICON (AUTH UI) ======================= */
+.user-avatar{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.45);
+  color: #fff;
+  line-height: 1;
+}
+
+/* Optional: make dropdown menu match style a bit more */
+.dropdown-menu {
+  border-radius: 12px;
+}
+
+/* ======================= BUTTONS ======================= */
+.btn-outline-light, #reserveBtn {
+  border-color: #fff;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover, #reserveBtn:hover {
+  background-color: #b89b73;
+  border-color: #b89b73;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #b89b73;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 25px;
+  transition: 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #a1815d;
+  transform: translateY(-2px);
+}
+
+/* ======================= MAIN CONTENT ======================= */
+main {
+  flex: 1;
+  padding: 40px 0;
+}
+
+.card, .dish-card {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+.img-fluid {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dish-card {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dish-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  padding: 20px;
+  color: white;
+  text-align: left;
+}
+
+.dish-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.dish-overlay p {
+  font-size: 1rem;
+  color: #eee;
+}
+
+/* ======================= HERO SECTION ======================= */
+.menu-hero, .hero-section {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(to right, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.2) 90%),
+              url('https://strg2.restoran.kz/neofiles/serve-image/6849241fb31891133635a24e/1280x720') center/cover no-repeat;
+}
+
+.menu-hero h1, .hero-section h1 {
+  font-size: 3.5rem;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  color: #ffffff;
+}
+
+.menu-hero p {
+  font-size: 1.25rem;
+  color: #f8f5f0;
+}
+
+/* ======================= FOOTER ======================= */
+footer {
+  background-color: #8b6f47;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+/* ======================= GUEST CARD ANIMATION ======================= */
+.guest-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.guest-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+
+/* ======================= MAP ======================= */
+.ratio-4x3 {
+  width: 100%;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+}
+
+.ratio-4x3 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* ======================= MODAL IMAGE ======================= */
+.modal-body img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* ======================= DARK MODE ======================= */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode footer {
+  background-color: #3a2e1f !important;
+  color: #f0f0f0;
+}
+
+body.dark-mode main,
+body.dark-mode main section {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode .card,
+body.dark-mode .dish-card {
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .dish-overlay {
+  background-color: rgba(0,0,0,0.65);
+}
+
+.dish-overlay h3,
+.dish-overlay p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .card-body p,
+body.dark-mode .card-body p.small.text-muted,
+body.dark-mode .dish-overlay p {
+  color: #dddddd !important;
+}
+
+body.dark-mode main h2,
+body.dark-mode h1 {
+  color: #fff;
+}
+
+body.dark-mode img {
+  filter: brightness(0.85);
+}
+
+body.dark-mode .hero-section {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://strg2.restoran.kz/neofiles/serve-image/6849241fb31891133635a24e/1280x720') center/cover no-repeat;
+}
+
+body.dark-mode .hero-section h1,
+body.dark-mode .hero-section p,
+body.dark-mode .text-main {
+  color: #ffffff !important;
+}
+
+/* Dark mode avatar tweak */
+body.dark-mode .user-avatar{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* ======================= USER AVATAR ======================= */
+.user-avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.table-card {
+  background: rgba(255,255,255,0.95);
+  transition: transform .08s ease, border-color .08s ease, box-shadow .08s ease;
+}
+
+.table-card:hover {
+  transform: translateY(-1px);
+}
+
+.table-card.selected {
+  border-color: #c9a46a !important;
+  box-shadow: 0 0 0 2px rgba(201,164,106,.25);
+}
+
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 768px) {
+  .nav-link {
+    text-align: center;
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px 0;
+  }
+
+  .menu-hero, .hero-section {
+    height: 60vh;
+    background-position: center;
+  }
+
+  .menu-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .menu-hero p {
+    font-size: 1rem;
+  }
+
+  .dish-card {
+    height: 250px;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
